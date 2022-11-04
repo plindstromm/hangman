@@ -1,0 +1,33 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+figure svg > * {
+    opacity: 0;
+}
+
+figure svg #ground             { opacity: 1; }
+figure.scaffold svg #scaffold  { opacity: 1; }
+figure.head     svg #head      { opacity: 1; }
+figure.body     svg #body      { opacity: 1; }
+figure.arms     svg #arms      { opacity: 1; }
+figure.legs     svg #legs      { opacity: 1; }
+
+#keyboard{
+    
+    
+ 
+}
+
+#scaffold,
+#head,
+#legs, 
+#body, 
+#arms
+{
+    display: none;
+}
+
