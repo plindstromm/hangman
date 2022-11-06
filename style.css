@@ -3,6 +3,9 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background-image: url('img/Cover-Image.jpg.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 figure svg > * {
@@ -16,10 +19,17 @@ figure.body     svg #body      { opacity: 1; }
 figure.arms     svg #arms      { opacity: 1; }
 figure.legs     svg #legs      { opacity: 1; }
 
-#keyboard{
-    
-    
- 
+h1{
+    font-family: Dancing Script;
+}
+
+p{
+    font-family: Dancing Script;
+    font-size: 1.5rem;
+}
+
+#pickedWord{
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #scaffold,
@@ -31,3 +41,53 @@ figure.legs     svg #legs      { opacity: 1; }
     display: none;
 }
 
+.resbtn{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    padding: 1.3rem;
+    width: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-family:'Courier New', Courier, monospace;
+    border-radius: 55px;
+    background-color: brown;
+    color: yellow;
+    border: none;
+}
+
+.resbtn:hover{
+    cursor: pointer;
+    background-color: yellow;
+    color: brown;
+}
+
+#keyboard{
+    display: flex;
+    justify-content: space-between;
+    gap: .4rem;
+        
+    
+}
+
+#pickedWord{
+    background-color: black;
+    color: yellow;
+    border-radius: 4px;
+    
+}
+
+.btn{
+    padding:.5rem ;
+    border-radius: 25%;
+    background-color: brown;
+    color: rgb(222, 222, 77);
+    border: none;
+}
+
+.btn:hover{
+    cursor: pointer;
+    background-color: yellow;
+    color:brown;
+}

@@ -40,7 +40,7 @@ function guessedWord (){
     document.getElementById('pickedWord').innerHTML = wordStatus;
     console.log(valtOrd)
     console.log(wordStatus)
-    
+ 
     
 }
 // puttar ut bokstäver samt skriver ut antal felval
@@ -49,36 +49,37 @@ function handleGuess(chosenLetter){
     
     if (valtOrd.indexOf(chosenLetter) >= 0){
         guessedWord();
-        
+        gamewon()
     } else if (valtOrd.indexOf(chosenLetter) === -1){
         misstag = misstag +1
         felVal.innerHTML = misstag
-        if (misstag === 1){
+        if (misstag === 1){              //En del av gubben delas ut per felgissning
+            document.getElementById('scaffold').style.display = 'block';
 
         }
         else if (misstag === 2){
-            
+            document.getElementById('head').style.display = 'block';
         }
          else if (misstag === 3){
-            
+            document.getElementById('body').style.display = 'block';
         }
         else if (misstag === 4){
-            
+            document.getElementById('arms').style.display = 'block';
         }
        
         else if (misstag >= 5) {
             document.getElementById('keyboard').innerHTML = "you lost!!"
-
+            document.getElementById('legs').style.display = 'block';
         }
         
     } 
 
-
+   
 }
 
 function gamewon(){
     if (valtOrd === wordStatus){
-        return alert('game won')
+        document.getElementById('keyboard').innerHTML = "you won!!"
         
     }
 }
@@ -88,14 +89,10 @@ function gamewon(){
 function reset(){
    history.go(0)
  }
-/*
-function reset(){
-    misstag = 0;
 
-}
-*/
 
-gamewon();
+
+
 handleGuess();
 guessedWord();
 knappar();
