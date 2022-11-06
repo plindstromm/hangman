@@ -1,7 +1,7 @@
 
 let words = ['skitfan', 'ringrost', 'mango', 'lekplats',]
 const felVal = document.getElementById('misstag')
-let misstag = -1;
+let mistake = -1;
 const maxMisstag = 5;
 const gissat = [];
 let wordStatus = null;
@@ -15,7 +15,7 @@ document.querySelector('figure').classList.add('arms')
 document.querySelector('figure').classList.add('legs')
 
 // väljer ett ord ur arrayen
-let valtOrd = words [Math.floor(Math.random() * words.length)]
+let chosenWord = words [Math.floor(Math.random() * words.length)]
 
 
 //gör knappar av alla bokstäver(gjorde ett inputfält först, men detta såg mycket smidigare ut)
@@ -36,9 +36,9 @@ function knappar(){
 
 //splitar det valda ordet och lägger det i wordStatus
 function guessedWord (){
-    wordStatus = valtOrd.split('').map(letter=>(gissat.indexOf(letter) >= 0 ? letter : " _ ")).join(``);
+    wordStatus = chosenWord.split('').map(letter=>(gissat.indexOf(letter) >= 0 ? letter : " _ ")).join(``);
     document.getElementById('pickedWord').innerHTML = wordStatus;
-    console.log(valtOrd)
+    console.log(chosenWord)
     console.log(wordStatus)
  
     
@@ -47,27 +47,27 @@ function guessedWord (){
 function handleGuess(chosenLetter){
     gissat.indexOf(chosenLetter) === -1 ? gissat.push(chosenLetter): null;
     
-    if (valtOrd.indexOf(chosenLetter) >= 0){
+    if (chosenWord.indexOf(chosenLetter) >= 0){
         guessedWord();
         gamewon()
-    } else if (valtOrd.indexOf(chosenLetter) === -1){
-        misstag = misstag +1
-        felVal.innerHTML = misstag
-        if (misstag === 1){              //En del av gubben delas ut per felgissning
+    } else if (chosenWord.indexOf(chosenLetter) === -1){
+        mistake = mistake +1
+        felVal.innerHTML = mistake
+        if (mistake === 1){              //En del av gubben delas ut per felgissning (jämför)
             document.getElementById('scaffold').style.display = 'block';
 
         }
-        else if (misstag === 2){
+        else if (mistake === 2){
             document.getElementById('head').style.display = 'block';
         }
-         else if (misstag === 3){
+         else if (mistake === 3){
             document.getElementById('body').style.display = 'block';
         }
-        else if (misstag === 4){
+        else if (mistake === 4){
             document.getElementById('arms').style.display = 'block';
         }
        
-        else if (misstag >= 5) {
+        else if (mistake >= 5) {
             document.getElementById('keyboard').innerHTML = "you lost!!"
             document.getElementById('legs').style.display = 'block';
             document.querySelector('.resbtn').style.display = 'block';
@@ -79,7 +79,7 @@ function handleGuess(chosenLetter){
 }
 
 function gamewon(){
-    if (valtOrd === wordStatus){
+    if (chosenWord === wordStatus){
         document.getElementById('keyboard').innerHTML = "you won!!"
         document.querySelector('.resbtn').style.display = 'block';
         
