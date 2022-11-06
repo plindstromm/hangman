@@ -70,6 +70,7 @@ function handleGuess(chosenLetter){
         else if (misstag >= 5) {
             document.getElementById('keyboard').innerHTML = "you lost!!"
             document.getElementById('legs').style.display = 'block';
+            document.querySelector('.resbtn').style.display = 'block';
         }
         
     } 
@@ -80,6 +81,7 @@ function handleGuess(chosenLetter){
 function gamewon(){
     if (valtOrd === wordStatus){
         document.getElementById('keyboard').innerHTML = "you won!!"
+        document.querySelector('.resbtn').style.display = 'block';
         
     }
 }

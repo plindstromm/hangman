@@ -6,6 +6,7 @@ body{
     background-image: url('img/Cover-Image.jpg.webp');
     background-repeat: no-repeat;
     background-size: cover;
+    
 }
 
 figure svg > * {
@@ -21,11 +22,15 @@ figure.legs     svg #legs      { opacity: 1; }
 
 h1{
     font-family: Dancing Script;
+    color: rgb(249, 249, 18);
+    font-size: 3rem;
+    
 }
 
 p{
     font-family: Dancing Script;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    color: rgb(249, 249, 18);
 }
 
 #pickedWord{
@@ -46,7 +51,7 @@ p{
     margin-bottom: 3rem;
     padding: 1.3rem;
     width: 10rem;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     font-size: 2rem;
@@ -67,6 +72,7 @@ p{
     display: flex;
     justify-content: space-between;
     gap: .4rem;
+    margin-bottom: 5rem;
         
     
 }
